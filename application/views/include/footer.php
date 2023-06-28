@@ -1,3 +1,5 @@
+    </div>    
+    </div>      
         <footer class="footer">
             © 2023 Apple Company
         </footer>

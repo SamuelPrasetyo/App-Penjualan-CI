@@ -14,6 +14,7 @@ $route['home'] = 'Dashboard';
 $route['view_iphone'] = 'Data_Barang/view_iphone';
 $route['view_macbook'] = 'Data_Barang/view_macbook';
 $route['entri_barang'] = 'Data_Barang/create';
+$route['create_barang'] = 'Data_Barang/action_create';
 $route['laporan_barang'] = 'Data_Barang/laporan';
 
 

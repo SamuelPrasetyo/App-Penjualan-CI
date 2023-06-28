@@ -67,6 +67,30 @@ class Data_barang extends CI_Controller
         $this->load->view('include/footer');
     }
 
+    public function action_create()
+    {
+        $get_input = array(
+            'id' => $this->input->post('id_brg'),
+            'nama_barang' => $this->input->post('nm_brg'),
+            'kategori' => $this->input->post('ktg_brg'),
+            'harga' => $this->input->post('hrg_brg'),
+        );
+
+        $result = $this->Model_barang->get_add($get_input);
+
+        if ($result) {
+            $this->session->set_flashdata('success', 'Berhasil Input Data');
+        } else {
+            $this->session->set_flashdata('failed', 'Gagal Input Data');
+        }
+
+        if ($get_input['kategori'] == 'IPhone') {
+            redirect('view_iphone');
+        } else {
+            redirect('view_macbook');
+        }
+    }
+
     public function laporan() 
     {
         $get_barang = $this->Model_barang->view_laporanbarang();
