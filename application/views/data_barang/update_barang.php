@@ -20,7 +20,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">*Nama Barang</label>
-                                    <input type="text" name="nm_brg" class="form-control" placeholder="Nama Barang" value="<?php echo $nm_brg; ?>">
+                                    <input type="text" name="nm_brg" class="form-control" placeholder="Nama Barang" value="<?php echo $nm_brg; ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="col-md-6">
                                 <div class="form-group has-success">
                                     <label class="control-label">*Kategori Barang</label>
-                                    <select class="form-control custom-select" name="ktg_brg">
+                                    <select class="form-control custom-select" name="ktg_brg" required>
                                         <option value=""></option>
                                         <option value="IPhone" <?php if ($ktg_brg == "IPhone") echo "selected"; ?>>IPhone</option>
                                         <option value="Mac" <?php if ($ktg_brg == "Mac") echo "selected"; ?>>Mac</option>
@@ -40,7 +40,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">*Harga Barang</label>
-                                    <input type="number" name="hrg_brg" id="hrg_brg" class="form-control" placeholder="Harga Barang" value="<?php echo $hrg_brg; ?>" onkeyup="formatAndDisplayRupiah()">
+                                    <input type="number" name="hrg_brg" id="hrg_brg" class="form-control" placeholder="Harga Barang" value="<?php echo $hrg_brg; ?>" onkeyup="formatAndDisplayRupiah()" required>
                                     <small class="form-control-feedback" id="rupiah"></small>
                                 </div>
                             </div>
