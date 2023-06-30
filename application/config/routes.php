@@ -15,6 +15,9 @@ $route['view_iphone'] = 'Data_Barang/view_iphone';
 $route['view_macbook'] = 'Data_Barang/view_macbook';
 $route['entri_barang'] = 'Data_Barang/create';
 $route['create_barang'] = 'Data_Barang/action_create';
+$route['edit_barang/(:any)'] = 'Data_Barang/update';
+$route['update_barang'] = 'Data_Barang/action_update';
+$route['delete_barang/(:any)'] = 'Data_Barang/delete';
 $route['laporan_barang'] = 'Data_Barang/laporan';
 
 

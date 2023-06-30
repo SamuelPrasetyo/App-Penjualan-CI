@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php base_url() ?>template/assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>template/assets/images/favicon.png">
 
     <title><?php echo $title; ?></title>
 
     <!-- chartist CSS -->
-    <link href="<?php base_url() ?>template/assets/node_modules/morrisjs/morris.css" rel="stylesheet">
-    <link href="<?php base_url() ?>template/ecommerce/dist/css/pages/ecommerce.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/ecommerce/dist/css/pages/ecommerce.css" rel="stylesheet">
     <!-- tables CSS -->
     <link rel="stylesheet" type="text/css"
-        href="<?php base_url() ?>template/assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
+        href="<?php echo base_url() ?>template/assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css"
-        href="<?php base_url() ?>template/assets/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
+        href="<?php echo base_url() ?>template/assets/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
     <!-- Custom CSS -->
-    <link href="<?php base_url() ?>template/ecommerce/dist/css/style.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/ecommerce/dist/css/style.min.css" rel="stylesheet">
 </head>
 
 <body class="skin-default fixed-layout">
@@ -41,7 +41,7 @@
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
                         <b>
-                            <img src="<?php base_url() ?>template/assets/gambar/banner.png" style="width: 50%; margin-left: 50px;" alt="homepage" class="dark-logo" />
+                            <img src="<?php echo base_url() ?>template/assets/gambar/banner.png" style="width: 50%; margin-left: 50px;" alt="homepage" class="dark-logo" />
                         </b>
                 </div>
 
@@ -62,7 +62,7 @@
                 <!-- User Profile-->
                 <div class="user-profile">
                     <div class="user-pro-body">
-                        <div><img src="<?php base_url() ?>template/assets/images/users/2.jpg" alt="user-img" class="img-circle"></div>
+                        <div><img src="<?php echo base_url() ?>template/assets/images/users/2.jpg" alt="user-img" class="img-circle"></div>
                         <div class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nama_user; ?> <span class="caret"></span></a>
                             <div class="dropdown-menu animated flipInY">

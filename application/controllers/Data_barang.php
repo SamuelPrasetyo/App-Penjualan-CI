@@ -59,7 +59,6 @@ class Data_barang extends CI_Controller
             'title_content' => 'Form Barang',
             'link1' => 'Forms',
             'link2' => 'Entri Data Barang',
-            'card_title' => 'Macbook'
         );
 
         $this->load->view('include/header', $data);
@@ -76,6 +75,8 @@ class Data_barang extends CI_Controller
             'harga' => $this->input->post('hrg_brg'),
         );
 
+        var_dump($get_input);
+
         $result = $this->Model_barang->get_add($get_input);
 
         if ($result) {
@@ -85,6 +86,96 @@ class Data_barang extends CI_Controller
         }
 
         if ($get_input['kategori'] == 'IPhone') {
+            redirect('view_iphone');
+        } else {
+            redirect('view_macbook');
+        }
+    }
+
+    public function update()
+    {
+        $data = array(
+            'title' => 'Form Update Barang',
+            'nama_user' => $this->session->userdata('nama_user'),
+            'title_content' => 'Update Barang',
+            'link1' => 'Forms',
+            'link2' => 'Update Data Barang',
+        );
+
+        $id_brg = $this->uri->segment(2);
+
+        $this->db->where('id_barang', $id_brg);
+        $cek = $this->db->get('data_barang');
+
+        if ($cek->num_rows() > 0) {
+            foreach ($cek->result() as $row){
+                $data_brg = array(
+                    'id_brg' => $row->id_barang,
+                    'nm_brg' => $row->nama_barang,
+                    'ktg_brg' => $row->kategori,
+                    'hrg_brg' => $row->harga_barang,
+                );
+            }
+        } else {
+            redirect('home');
+        }
+
+        $this->load->view('include/header', $data);
+        $this->load->view('data_barang/update_barang', $data_brg);
+        $this->load->view('include/footer');
+    }
+
+    public function action_update()
+    {
+        $get_update = array(
+            'id' => $this->input->post('id_brg'),
+            'nama_barang' => $this->input->post('nm_brg'),
+            'kategori' => $this->input->post('ktg_brg'),
+            'harga' => $this->input->post('hrg_brg'),
+        );
+
+        $result = $this->Model_barang->get_edit($get_update);
+
+        if ($result) {
+            $this->session->set_flashdata('success', 'Berhasil Update Data');
+        } else {
+            $this->session->set_flashdata('failed', 'Gagal Update Data');
+        }
+
+        if ($get_update['kategori'] == 'IPhone') {
+            redirect('view_iphone');
+        } else {
+            redirect('view_macbook');
+        }
+    }
+
+    public function delete()
+    {
+        $id_brg = $this->uri->segment(2);
+
+        $this->db->where('id_barang', $id_brg);
+        $cek = $this->db->get('data_barang');
+
+        if ($cek->num_rows() > 0) {
+            foreach ($cek->result() as $row){
+                $data_brg = array(
+                    'id_brg' => $row->id_barang,
+                    'nm_brg' => $row->nama_barang,
+                    'ktg_brg' => $row->kategori,
+                    'hrg_brg' => $row->harga_barang,
+                );
+            }
+        }
+
+        $result = $this->Model_barang->get_delete($data_brg);
+
+        if ($result) {
+            $this->session->set_flashdata('success', 'Berhasil Hapus Data');
+        } else {
+            $this->session->set_flashdata('failed', 'Gagal Hapus Data');
+        }
+
+        if ($data_brg['ktg_brg'] == 'IPhone') {
             redirect('view_iphone');
         } else {
             redirect('view_macbook');

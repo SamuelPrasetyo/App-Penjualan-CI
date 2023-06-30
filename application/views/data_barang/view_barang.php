@@ -15,7 +15,7 @@
                                                 <th>Nama Barang</th>
                                                 <th>Kategori</th>
                                                 <th>Harga</th>
-                                                <!-- <th>Action</th> -->
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -25,7 +25,7 @@
                                                 <th>Nama Barang</th>
                                                 <th>Kategori</th>
                                                 <th>Harga</th>
-                                                <!-- <th>Action</th> -->
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -46,10 +46,10 @@
                                                 <td>
                                                     <?php echo $row->harga_barang; ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <a class="btn btn-warning" href="<?php echo base_url('update_barang/'.$row->id_barang); ?>">Update</a>
+                                                <td>
+                                                    <a class="btn btn-warning" href="<?php echo base_url('edit_barang/'.$row->id_barang); ?>">Update</a>
                                                     <a class="btn btn-danger" href="<?php echo base_url('delete_barang/'.$row->id_barang); ?>">Delete</a>
-                                                </td> -->
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                         </tbody>
