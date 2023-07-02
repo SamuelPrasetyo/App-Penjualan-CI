@@ -20,6 +20,16 @@ $route['update_barang'] = 'Data_Barang/action_update';
 $route['delete_barang/(:any)'] = 'Data_Barang/delete';
 $route['laporan_barang'] = 'Data_Barang/laporan';
 
+// Entri Penjualan
+$route['view_penjualan'] = 'Penjualan/view_penjualan';
+$route['entri_penjualan'] = 'Penjualan/create';
+$route['create_penjualan'] = 'Penjualan/action_create';
+$route['edit_penjualan/(:any)'] = 'Penjualan/update';
+$route['get_harga_barang'] = 'Penjualan/get_harga_barang';
+$route['update_penjualan'] = 'Penjualan/action_update';
+$route['delete_penjualan/(:any)'] = 'Penjualan/delete';
+$route['laporan_penjualan'] = 'Penjualan/laporan';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

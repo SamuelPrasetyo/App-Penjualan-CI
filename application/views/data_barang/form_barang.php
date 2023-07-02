@@ -14,13 +14,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">*ID Barang</label>
-                                    <input type="text" name="id_brg" class="form-control" placeholder="ID Barang" required>
+                                    <input type="text" name="id_brg" class="form-control" placeholder="ID Barang" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">*Nama Barang</label>
-                                    <input type="text" name="nm_brg" class="form-control" placeholder="Nama Barang" required>
+                                    <input type="text" name="nm_brg" class="form-control" placeholder="Nama Barang" autocomplete="off" required>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">*Harga Barang</label><br>
-                                    <input type="number" name="hrg_brg" id="hrg_brg" class="form-control" placeholder="Harga Barang" onkeyup="formatAndDisplayRupiah()" required>
+                                    <input type="number" name="hrg_brg" id="hrg_brg" class="form-control" placeholder="Harga Barang" onkeyup="formatAndDisplayRupiah()" autocomplete="off" required>
                                     <small class="form-control-feedback" id="rupiah"></small>
                                 </div>
                             </div>

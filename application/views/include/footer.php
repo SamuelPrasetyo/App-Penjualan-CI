@@ -137,6 +137,37 @@
         // Panggil fungsi saat halaman dimuat untuk menampilkan nominal rupiah awal
         formatAndDisplayRupiah();
     </script>
+    <script>
+        function getHargaBarang(select) {
+            var nama_barang = select.value;
+
+            $.ajax({
+                url: "Penjualan/get_barang",
+                type: "POST",
+                data: {nama_barang: nama_barang},
+                dataType: "json",
+                success: function(data) {
+                    $("#harga_barang").val(data.harga_barang);
+                }
+            });
+        }
+    </script>
+    <script>
+        function getHargaBarangUpdate(select) {
+            var nama_barang = select.value;
+
+            $.ajax({
+                url: "<?php echo base_url('get_harga_barang'); ?>",
+                type: "POST",
+                data: {nama_barang: nama_barang},
+                dataType: "json",
+                success: function(data) {
+                    $("#harga_barang").val(data.harga_barang);
+                }
+            });
+        }
+    </script>
+
 </body>
 
 </html>

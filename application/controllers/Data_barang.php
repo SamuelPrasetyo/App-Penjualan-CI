@@ -1,19 +1,15 @@
 <?php
 
-
 class Data_barang extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('form_validation');
         $this->load->model('Model_barang');
 
         if ($this->session->userdata('id') == "1") {
             redirect('login');
         }
-
-        $this->folder = 'data_barang';
     }
 
     public function view_iphone() 

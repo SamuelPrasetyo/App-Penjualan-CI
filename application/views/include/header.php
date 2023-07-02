@@ -81,7 +81,7 @@
                                 <i class="fas fa-home text-success"></i><span class="hide-menu"> Home</span></a>
                         </li>
 
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-accordion-merged"></i>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-box"></i>
                             <span class="hide-menu">Data Barang</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?=base_url('view_iphone')?>">Iphone</a></li>
@@ -93,8 +93,15 @@
                             <span class="hide-menu">Forms</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?=base_url('entri_barang')?>">Entri Data Barang</a></li>
+                                <li><a href="<?=base_url('entri_penjualan')?>">Entri Penjualan</a></li>
                             </ul>
                         </li>
+
+                        <li> 
+                            <a class="waves-effect waves-dark" href="<?=base_url('view_penjualan')?>" aria-expanded="false">
+                                <i class="fas fa-history"></i><span class="hide-menu"> History Transaksi</span></a>
+                        </li>
+
                         <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i>
                             <span class="hide-menu">Laporan</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -102,7 +109,8 @@
                                 <li><a href="#">Laporan Penjualan</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-pie-chart"></i>
+
+                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-chart-bar"></i>
                             <span class="hide-menu">Grafik</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="#">Penjualan Barang</a></li>
