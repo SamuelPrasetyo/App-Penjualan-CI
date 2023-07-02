@@ -23,6 +23,20 @@
         href="<?php echo base_url() ?>template/assets/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
     <!-- Custom CSS -->
     <link href="<?php echo base_url() ?>template/ecommerce/dist/css/style.min.css" rel="stylesheet">
+
+
+
+
+    <link href="<?php echo base_url() ?>template/assets/node_modules/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+    <!-- Page plugins css -->
+    <link href="<?php echo base_url() ?>template/assets/node_modules/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+    <!-- Color picker plugins css -->
+    <link href="<?php echo base_url() ?>template/assets/node_modules/jquery-asColorPicker-master/dist/css/asColorPicker.css" rel="stylesheet">
+    <!-- Date picker plugins css -->
+    <link href="<?php echo base_url() ?>template/assets/node_modules/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker plugins css -->
+    <link href="<?php echo base_url() ?>template/assets/node_modules/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>template/assets/node_modules/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 </head>
 
 <body class="skin-default fixed-layout">
@@ -117,12 +131,10 @@
                             </ul>
                         </li>
                         
-                        <!-- <li> <a class="waves-effect waves-dark" href="../documentation/documentation.html" aria-expanded="false"><i class="far fa-circle text-danger"></i><span class="hide-menu">Documentation</span></a></li> -->
                         <li style="margin-top: 100px;"> 
                             <a class="waves-effect waves-dark" href="<?=base_url('logout')?>" aria-expanded="false">
                                 <i class="far fa-circle text-success"></i><span class="hide-menu">Log Out</span></a>
                         </li>
-                        <!-- <li> <a class="waves-effect waves-dark" href="pages-faq.html" aria-expanded="false"><i class="far fa-circle text-info"></i><span class="hide-menu">FAQs</span></a></li> -->
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

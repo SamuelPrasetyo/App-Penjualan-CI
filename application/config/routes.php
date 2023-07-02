@@ -29,6 +29,7 @@ $route['get_harga_barang'] = 'Penjualan/get_harga_barang';
 $route['update_penjualan'] = 'Penjualan/action_update';
 $route['delete_penjualan/(:any)'] = 'Penjualan/delete';
 $route['laporan_penjualan'] = 'Penjualan/laporan';
+$route['range_penjualan'] = 'Penjualan/range_laporan';
 
 
 $route['404_override'] = '';

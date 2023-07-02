@@ -12,18 +12,6 @@ class Penjualan extends CI_Controller
         }
     }
 
-    // public function get_barang()
-    // {
-    //     $nama_barang = $this->input->post('nama_barang'); // Mengambil nilai nama_barang dari request POST
-
-    //     $this->db->select('id_barang, nama_barang, harga_barang');
-    //     $this->db->from('data_barang');
-    //     $this->db->where('nama_barang', $nama_barang); // Menambahkan kondisi WHERE untuk memfilter berdasarkan nama_barang
-    //     $result = $this->db->get()->row(); // Mengambil hasil query hanya sebagai satu baris (objek)
-
-    //     echo json_encode($result); // Mengembalikan hasil query dalam format JSON
-    // }
-
     public function get_barang()
     {
         $nama_barang = $this->input->post('nama_barang'); // Mengambil nilai nama_barang dari request POST
@@ -39,24 +27,6 @@ class Penjualan extends CI_Controller
 
         echo json_encode($result); // Mengembalikan hasil query dalam format JSON
     }
-
-    // public function get_harga_barang()
-    // {
-    //     $nama_barang = $this->input->post('nama_barang');
-
-    //     // Query database untuk mendapatkan harga barang berdasarkan nama_barang
-    //     $result = $this->Model_penjualan->get_harga_barang($nama_barang);
-
-    //     if ($result) {
-    //         $harga_barang = $result->harga_barang;
-    //     } else {
-    //         $harga_barang = "Error";
-    //     }
-
-    //     // Menyusun data harga barang dalam format JSON dan mengembalikannya sebagai respon
-    //     $data = array('harga_barang' => $harga_barang);
-    //     echo json_encode($data);
-    // }
 
     public function get_harga_barang()
     {
@@ -258,5 +228,31 @@ class Penjualan extends CI_Controller
         $this->load->view('entri_penjualan/laporan_penjualan');
         $this->load->view('include/footer');
     }
+
+    public function range_laporan()
+    {
+        $startDate = $this->input->post('tgl_beli1');
+        $endDate = $this->input->post('tgl_beli2');
+
+        $query = "SELECT * FROM penjualan WHERE tgl_beli BETWEEN '$startDate' AND '$endDate'";
+        // var_dump($query);
+        $result = $this->db->query($query);
+
+        $data = array(
+            'get_penjualan' => $result->result(),
+            'title' => 'Laporan Data Penjualan',
+            'nama_user' => $this->session->userdata('nama_user'),
+            'title_content' => 'Laporan Data Penjualan',
+            'link1' => 'Laporan',
+            'link2' => 'Laporan Data Penjualan'
+        );
+
+        // Load view dengan mengirimkan data hasil query
+        $this->load->view('include/header', $data);
+        $this->load->view('entri_penjualan/laporan_penjualan', $data);
+        $this->load->view('include/footer');
+    }
+
+
 }
 ?>

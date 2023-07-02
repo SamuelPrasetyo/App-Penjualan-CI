@@ -4,7 +4,18 @@
                             <div class="card-body">
                                 <h4 class="card-title">Data Export</h4>
                                 <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
-                                <div class="table-responsive m-t-40">
+                                <form action="<?php echo base_url('range_penjualan'); ?>" method="post">
+                                    <div class="input-group-append">
+                                        <!-- <input type="text" class="form-control daterange" name="dateRange" style="width: 500px;"/> -->
+                                        <input type="date" name="tgl_beli1" class="form-control" placeholder="dd/mm/yy" style="width: 150px;" required> <h2>&nbsp; - &nbsp;</h2>
+                                        <input type="date" name="tgl_beli2" class="form-control" placeholder="dd/mm/yy" style="width: 150px;" required> <h2>&nbsp;</h2>
+                                            <!-- <span class="input-group-text">
+                                                <span class="ti-calendar"></span>
+                                            </span> -->
+                                        <button type="submit" name="submit" class="btn btn-info" style="height: 38px;"> <i class="fas fa-search"></i> Search</button>
+                                    </div>           
+                                </form>
+                                <div class="table-responsive m-t-10">
                                     <table id="example23"
                                         class="display nowrap table table-hover table-striped table-bordered"
                                         cellspacing="0" width="100%">
@@ -29,7 +40,7 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        <?php $no = 1; foreach ($get_penjualan->result() as $row) { ?>
+                                        <?php $no = 1; foreach ($get_penjualan as $row) { ?>
                                             <tr>
                                                 <td>
                                                     <?php echo $no++; ?>

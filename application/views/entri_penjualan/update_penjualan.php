@@ -13,7 +13,7 @@
                         <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label">*ID Transaksi</label>
+                                    <label class="control-label">ID Transaksi</label>
                                     <input type="text" name="id_tsk" class="form-control" value="<?php echo $id_pjl; ?>" readonly>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label">*Harga Barang</label><br>
+                                    <label class="control-label">Harga Barang</label><br>
                                     <input type="number" name="hrg_brg" id="harga_barang" class="form-control" placeholder="Harga Barang" onkeyup="formatAndDisplayRupiah()" autocomplete="off" value="<?php echo $hrg; ?>" readonly>
                                     <small class="form-control-feedback">Sudah Termasuk Pajak 11%</small>
                                 </div>

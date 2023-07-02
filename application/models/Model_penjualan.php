@@ -104,7 +104,8 @@ class Model_penjualan extends CI_Model
 
     public function view_laporan_penjualan() 
     {
-        return $this->db->get('penjualan');
+        $query = $this->db->get('penjualan');
+        return $query->result();
     }
 }
 
