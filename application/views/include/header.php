@@ -106,7 +106,7 @@
                             <span class="hide-menu">Laporan</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?=base_url('laporan_barang')?>">Laporan Data Barang</a></li>
-                                <li><a href="#">Laporan Penjualan</a></li>
+                                <li><a href="<?=base_url('laporan_penjualan')?>">Laporan Penjualan</a></li>
                             </ul>
                         </li>
 

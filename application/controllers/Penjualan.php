@@ -12,6 +12,18 @@ class Penjualan extends CI_Controller
         }
     }
 
+    // public function get_barang()
+    // {
+    //     $nama_barang = $this->input->post('nama_barang'); // Mengambil nilai nama_barang dari request POST
+
+    //     $this->db->select('id_barang, nama_barang, harga_barang');
+    //     $this->db->from('data_barang');
+    //     $this->db->where('nama_barang', $nama_barang); // Menambahkan kondisi WHERE untuk memfilter berdasarkan nama_barang
+    //     $result = $this->db->get()->row(); // Mengambil hasil query hanya sebagai satu baris (objek)
+
+    //     echo json_encode($result); // Mengembalikan hasil query dalam format JSON
+    // }
+
     public function get_barang()
     {
         $nama_barang = $this->input->post('nama_barang'); // Mengambil nilai nama_barang dari request POST
@@ -21,26 +33,52 @@ class Penjualan extends CI_Controller
         $this->db->where('nama_barang', $nama_barang); // Menambahkan kondisi WHERE untuk memfilter berdasarkan nama_barang
         $result = $this->db->get()->row(); // Mengambil hasil query hanya sebagai satu baris (objek)
 
+        // Menambahkan pajak 11% ke harga_barang dan mengubahnya menjadi bilangan bulat
+        $harga_barang = intval($result->harga_barang * 1.11);
+        $result->harga_barang = $harga_barang;
+
         echo json_encode($result); // Mengembalikan hasil query dalam format JSON
     }
+
+    // public function get_harga_barang()
+    // {
+    //     $nama_barang = $this->input->post('nama_barang');
+
+    //     // Query database untuk mendapatkan harga barang berdasarkan nama_barang
+    //     $result = $this->Model_penjualan->get_harga_barang($nama_barang);
+
+    //     if ($result) {
+    //         $harga_barang = $result->harga_barang;
+    //     } else {
+    //         $harga_barang = "Error";
+    //     }
+
+    //     // Menyusun data harga barang dalam format JSON dan mengembalikannya sebagai respon
+    //     $data = array('harga_barang' => $harga_barang);
+    //     echo json_encode($data);
+    // }
 
     public function get_harga_barang()
     {
         $nama_barang = $this->input->post('nama_barang');
-
+    
         // Query database untuk mendapatkan harga barang berdasarkan nama_barang
         $result = $this->Model_penjualan->get_harga_barang($nama_barang);
-
+    
         if ($result) {
-            $harga_barang = $result->harga_barang;
+            // Menghitung harga barang termasuk pajak 11%
+            $harga_barang = $result->harga_barang * 1.11;
+    
+            // Menghilangkan angka dibelakang koma
+            $harga_barang = intval($harga_barang);
         } else {
             $harga_barang = "Error";
         }
-
+    
         // Menyusun data harga barang dalam format JSON dan mengembalikannya sebagai respon
         $data = array('harga_barang' => $harga_barang);
         echo json_encode($data);
-    }
+    }    
 
     public function view_penjualan()
     {
@@ -206,18 +244,18 @@ class Penjualan extends CI_Controller
 
     public function laporan() 
     {
-        $get_barang = $this->Model_barang->view_laporanbarang();
+        $get_penjualan = $this->Model_penjualan->view_laporan_penjualan();
         $data = array(
-            'get_barang' => $get_barang,
-            'title' => 'Laporan Data Barang',
+            'get_penjualan' => $get_penjualan,
+            'title' => 'Laporan Data Penjualan',
             'nama_user' => $this->session->userdata('nama_user'),
-            'title_content' => 'Laporan Data Barang',
+            'title_content' => 'Laporan Data Penjualan',
             'link1' => 'Laporan',
-            'link2' => 'Laporan Data Barang'
+            'link2' => 'Laporan Data Penjualan'
         );
 
         $this->load->view('include/header', $data);
-        $this->load->view('data_barang/laporan_barang');
+        $this->load->view('entri_penjualan/laporan_penjualan');
         $this->load->view('include/footer');
     }
 }

@@ -53,7 +53,7 @@
                                 <div class="form-group">
                                     <label class="control-label">*Harga Barang</label><br>
                                     <input type="number" name="hrg_brg" id="harga_barang" class="form-control" placeholder="Harga Barang" onkeyup="formatAndDisplayRupiah()" autocomplete="off" value="<?php echo $hrg; ?>" readonly>
-                                    <small class="form-control-feedback" id="rupiah"></small>
+                                    <small class="form-control-feedback">Sudah Termasuk Pajak 11%</small>
                                 </div>
                             </div>
                         </div>
