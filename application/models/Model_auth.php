@@ -8,41 +8,46 @@ class Model_auth extends CI_Model{
         parent::__construct();
     }
 
-    public function auth_admin($username, $password) 
+    // public function auth_pegawai($username, $password) 
+    // {
+    //     $query = $this->db->query("SELECT * FROM users where nip='$username' AND password='$password' LIMIT 1");
+
+    //     if ($query->num_rows() > 0) {
+    //         $row = $query->row();
+
+    //         $data_session = array(
+    //             'nip' => $row->nip,
+    //             'password' => $row->password,
+    //             'nama_pegawai' => $row->nama_pegawai
+    //         );
+
+    //         $this->session->set_userdata($data_session);
+    //     }
+    //     return $query;
+    // }
+
+
+
+    public function auth_pegawai($username)
     {
-        $query = $this->db->query("SELECT * FROM users where nip='$username' AND password='$password' LIMIT 1");
+        $query = $this->db->query("SELECT * FROM users WHERE nip = '$username' LIMIT 1");
 
         if ($query->num_rows() > 0) {
             $row = $query->row();
 
-            $data_session = array(
+            $result = array(
                 'nip' => $row->nip,
                 'password' => $row->password,
-                'nama_admin' => $row->nama_pegawai
+                'nama_pegawai' => $row->nama_pegawai,
+                'level' => $row->level
             );
 
-            $this->session->set_userdata($data_session);
+            return $result;
         }
-        return $query;
+
+        return false;
     }
 
-    public function auth_pegawai($username, $password) 
-    {
-        $query = $this->db->query("SELECT * FROM users where nip='$username' AND password='$password' LIMIT 1");
-
-        if ($query->num_rows() > 0) {
-            $row = $query->row();
-
-            $data_session = array(
-                'nip' => $row->nip,
-                'password' => $row->password,
-                'nama_pegawai' => $row->nama_pegawai
-            );
-
-            $this->session->set_userdata($data_session);
-        }
-        return $query;
-    }
 }
 
 ?>
