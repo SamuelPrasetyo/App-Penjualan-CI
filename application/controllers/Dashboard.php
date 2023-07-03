@@ -11,6 +11,8 @@ class Dashboard extends CI_Controller
             $url = base_url();
             redirect($url);
         }
+
+        $this->load->model('Model_dashboard');
     }
 
     public function index()
@@ -22,8 +24,16 @@ class Dashboard extends CI_Controller
             'link1' => 'Dashboard',
             'link2' => 'Home'
         );
+
+        $data_penjualan = array(
+            'barangTerjual' => $this->Model_dashboard->getJumlahBarangTerjual(),
+            'statistikPendapatan' => $this->Model_dashboard->getStatistikPendapatan(),
+            'penjualanAwalTahun' => $this->Model_dashboard->getPenjualanAwalTahun(),
+            'penjualan' => $this->Model_dashboard->get_jumlah_barang_dibeli(),
+        );
+
         $this->load->view('include/header', $data);
-        $this->load->view('dashboard/home');
+        $this->load->view('dashboard/home', $data_penjualan);
         $this->load->view('include/footer');
     }
 

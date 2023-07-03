@@ -15,6 +15,7 @@
 
     <!-- chartist CSS -->
     <link href="<?php echo base_url() ?>template/assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="<?php echo base_url() ?>template/ecommerce/dist/css/pages/ecommerce.css" rel="stylesheet">
     <!-- tables CSS -->
     <link rel="stylesheet" type="text/css"
@@ -22,6 +23,7 @@
     <link rel="stylesheet" type="text/css"
         href="<?php echo base_url() ?>template/assets/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
     <!-- Custom CSS -->
+    <link href="<?php echo base_url() ?>template/ecommerce/dist/css/style.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>template/ecommerce/dist/css/style.min.css" rel="stylesheet">
 
 
@@ -126,13 +128,6 @@
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="<?=base_url('laporan_barang')?>">Laporan Data Barang</a></li>
                                     <li><a href="<?=base_url('laporan_penjualan')?>">Laporan Penjualan</a></li>
-                                </ul>
-                            </li>
-
-                            <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-chart-bar"></i>
-                                <span class="hide-menu">Grafik</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="#">Penjualan Barang</a></li>
                                 </ul>
                             </li>
                         <?php } ?>

@@ -1,10 +1,10 @@
-    </div>    
-    </div>      
-        <footer class="footer">
-            © 2023 Apple Company
-        </footer>
-    </div>
-    
+</div>
+</div>
+    <footer class="footer">
+        © 2023 Apple Company
+    </footer>
+</div>
+
     <script src="<?php echo base_url() ?>template/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="<?php echo base_url() ?>template/assets/node_modules/popper/popper.min.js"></script>
@@ -29,6 +29,7 @@
     <script src="<?php echo base_url() ?>template/assets/node_modules/morrisjs/morris.min.js"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url() ?>template/ecommerce/dist/js/ecom-dashboard.js"></script>
+    <script src="<?php echo base_url() ?>template/ecommerce/dist/js/pages/morris-data.js"></script>
 
 
 
@@ -43,9 +44,9 @@
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
     <!-- end - This is for export functionality only -->
-    
+
     <script>
-        $(function () {
+        $(function() {
             $('#myTable').DataTable();
             var table = $('#example').DataTable({
                 "columnDefs": [{
@@ -56,7 +57,7 @@
                     [2, 'asc']
                 ],
                 "displayLength": 25,
-                "drawCallback": function (settings) {
+                "drawCallback": function(settings) {
                     var api = this.api();
                     var rows = api.rows({
                         page: 'current'
@@ -64,7 +65,7 @@
                     var last = null;
                     api.column(2, {
                         page: 'current'
-                    }).data().each(function (group, i) {
+                    }).data().each(function(group, i) {
                         if (last !== group) {
                             $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
                             last = group;
@@ -73,7 +74,7 @@
                 }
             });
             // Order by the grouping
-            $('#example tbody').on('click', 'tr.group', function () {
+            $('#example tbody').on('click', 'tr.group', function() {
                 var currentOrder = table.order()[0];
                 if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
                     table.order([2, 'desc']).draw();
@@ -145,7 +146,9 @@
             $.ajax({
                 url: "Penjualan/get_barang",
                 type: "POST",
-                data: {nama_barang: nama_barang},
+                data: {
+                    nama_barang: nama_barang
+                },
                 dataType: "json",
                 success: function(data) {
                     $("#harga_barang").val(data.harga_barang);
@@ -160,7 +163,9 @@
             $.ajax({
                 url: "<?php echo base_url('get_harga_barang'); ?>",
                 type: "POST",
-                data: {nama_barang: nama_barang},
+                data: {
+                    nama_barang: nama_barang
+                },
                 dataType: "json",
                 success: function(data) {
                     $("#harga_barang").val(data.harga_barang);
@@ -202,11 +207,23 @@
 
     <script type="text/javascript">
         // MAterial Date picker    
-        $('#mdate').bootstrapMaterialDatePicker({ weekStart: 0, time: false });
-        $('#timepicker').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
-        $('#date-format').bootstrapMaterialDatePicker({ format: 'dddd DD MMMM YYYY - HH:mm' });
+        $('#mdate').bootstrapMaterialDatePicker({
+            weekStart: 0,
+            time: false
+        });
+        $('#timepicker').bootstrapMaterialDatePicker({
+            format: 'HH:mm',
+            time: true,
+            date: false
+        });
+        $('#date-format').bootstrapMaterialDatePicker({
+            format: 'dddd DD MMMM YYYY - HH:mm'
+        });
 
-        $('#min-date').bootstrapMaterialDatePicker({ format: 'DD/MM/YYYY HH:mm', minDate: new Date() });
+        $('#min-date').bootstrapMaterialDatePicker({
+            format: 'DD/MM/YYYY HH:mm',
+            minDate: new Date()
+        });
         // Clock pickers
         $('#single-input').clockpicker({
             placement: 'bottom',
@@ -381,8 +398,104 @@
             }
         });
     </script>
+    <script>
+        var data = <?php echo json_encode($penjualan); ?>;
+        var labels = [];
+        var jumlah = [];
 
+        data.forEach(function(row) {
+            labels.push(row.item_dibeli);
+            jumlah.push(row.jumlah);
+        });
 
+        var ctx = document.getElementById('grafikBatang').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels, // Menggunakan data labels yang sudah Anda siapkan
+                datasets: [{
+                    label: 'Jumlah Barang Dibeli', // Label untuk dataset
+                    data: jumlah,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var data = <?php echo json_encode($penjualan); ?>;
+        var labels = [];
+        var jumlah = [];
+
+        data.forEach(function(row) {
+            labels.push(row.item_dibeli);
+            jumlah.push(row.jumlah);
+        });
+
+        var ctx = document.getElementById('grafikLingkaran').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: jumlah,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Grafik Jumlah Barang Dibeli'
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 

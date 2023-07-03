@@ -49,7 +49,7 @@
                                                     <?php echo $row->item_dibeli; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row->total_harga; ?>
+                                                    Rp. <?php echo $row->total_harga; ?>
                                                 </td>
                                                 <td>
                                                     <a class="btn btn-warning" href="<?php echo base_url('edit_penjualan/'.$row->id_transaksi); ?>">Update</a>

@@ -31,6 +31,10 @@ $route['delete_penjualan/(:any)'] = 'Penjualan/delete';
 $route['laporan_penjualan'] = 'Penjualan/laporan';
 $route['range_penjualan'] = 'Penjualan/range_laporan';
 
+// Grafik Penjualan
+$route['chart'] = 'Grafik/grafik_batang';
+$route['pie'] = 'Grafik/grafik_lingkaran';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
