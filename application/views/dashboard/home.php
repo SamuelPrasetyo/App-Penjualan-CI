@@ -1,5 +1,5 @@
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Barang yang Terjual</h4>
@@ -20,22 +20,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Pajak</h4>
-                                <div class="text-right"> <span class="text-muted">Monthly Deduction</span>
-                                    <h3 class="font-light"><sup><i class="ti-arrow-up text-primary"></i></sup> $5,000</h3>
-                                </div>
-                                <span class="text-primary">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 30%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Statistik Pendapatan</h4>
@@ -55,7 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Penjualan Awal Tahun</h4>
@@ -64,12 +49,12 @@
                                 </div>
                                 <span class="text-inverse">
                                     <?php
-                                    $persentase = ($barangTerjual / 100) * 100; // Menghitung persentase total pembelian
-                                    echo $persentase . "%";
+                                    $persen = ($barangAwalTahun / 100) * 100; // Menghitung persen total pembelian
+                                    echo $persen . "%";
                                     ?>
                                 </span>
                                 <div class="progress">
-                                    <div class="progress-bar bg-inverse" role="progressbar" style="width: <?php echo $persentase; ?>%; height: 6px;" aria-valuenow="<?php echo $persentase; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-inverse" role="progressbar" style="width: <?php echo $persen; ?>%; height: 6px;" aria-valuenow="<?php echo $persen; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>

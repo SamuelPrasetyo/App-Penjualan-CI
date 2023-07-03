@@ -29,6 +29,7 @@ class Dashboard extends CI_Controller
             'barangTerjual' => $this->Model_dashboard->getJumlahBarangTerjual(),
             'statistikPendapatan' => $this->Model_dashboard->getStatistikPendapatan(),
             'penjualanAwalTahun' => $this->Model_dashboard->getPenjualanAwalTahun(),
+            'barangAwalTahun' => $this->Model_dashboard->getJumlahBarangAwalTahun(),
             'penjualan' => $this->Model_dashboard->get_jumlah_barang_dibeli(),
         );
 
