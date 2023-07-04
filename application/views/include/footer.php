@@ -414,7 +414,7 @@
             data: {
                 labels: labels, // Menggunakan data labels yang sudah Anda siapkan
                 datasets: [{
-                    label: 'Jumlah Barang Dibeli', // Label untuk dataset
+                    label: 'Grafik Penjualan Barang', // Label untuk dataset
                     data: jumlah,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -495,6 +495,28 @@
                 }
             }
         });
+    </script>
+    <script>
+        function addItemBarang() {
+            var itemBarang = document.getElementById("item_brg");
+            var namaBarang = itemBarang.options[itemBarang.selectedIndex].text;
+            var hargaBarang = document.getElementById("harga_barang").value;
+
+            if (namaBarang !== "" && hargaBarang !== "") {
+                var table = document.getElementById("keranjang").getElementsByTagName("tbody")[0];
+
+                var newRow = table.insertRow(table.rows.length);
+                var namaCell = newRow.insertCell(0);
+                var hargaCell = newRow.insertCell(1);
+
+                namaCell.innerHTML = namaBarang;
+                hargaCell.innerHTML = hargaBarang;
+
+                // Reset input values
+                itemBarang.selectedIndex = 0;
+                document.getElementById("harga_barang").value = "";
+            }
+        }
     </script>
 
 </body>

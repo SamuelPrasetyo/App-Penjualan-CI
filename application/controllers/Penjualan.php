@@ -106,6 +106,44 @@ class Penjualan extends CI_Controller
         $this->load->view('include/footer');
     }
 
+    public function create_2()
+    {   
+        // ID Pembayaran Otomatis sesuai Tanggal + Unik ID
+		$koneksi = mysqli_connect ("localhost", "root", "", "app_penjualan");
+		$kode = '';
+		// cek kode
+		$query = mysqli_query($koneksi, "SELECT max(right(id_transaksi, 4)) AS kode FROM penjualan WHERE DATE(tgl_beli) = CURDATE()");
+
+		if ($query->num_rows > 0) {
+			foreach ($query as $q) {
+				$no = ((int)$q['kode'])+1;
+				$kd = sprintf("%04s", $no);
+				}
+			} else {
+				$kd = "0001";
+		}
+
+		date_default_timezone_set('Asia/Jakarta');
+		$kode = date('dmy').$kd;
+
+		// Tanggal Bayar Otomatis sesuai Tanggal
+		$tanggal = date("dd/mm/yy");
+
+        $data = array(
+            'title' => 'Form Entri Penjualan',
+            'nama_user' => $this->session->userdata('nama_user'),
+            'title_content' => 'Form Penjualan',
+            'link1' => 'Forms',
+            'link2' => 'Entri Penjualan',
+            'id_transaksi' => $kode,
+            'tgl' => $tanggal,
+        );
+
+        $this->load->view('include/header', $data);
+        $this->load->view('entri_penjualan/form_penjualan_2');
+        $this->load->view('include/footer');
+    }
+
     public function action_create()
     {
         $get_input = array(

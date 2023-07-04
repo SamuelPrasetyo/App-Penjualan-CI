@@ -69,7 +69,6 @@
                                 <div class="d-flex m-b-40 align-items-center no-block">
                                     <h5 class="card-title ">PRODUK TERJUAL</h5>
                                 </div>
-                                <!-- <div id="morris-area-chart2" style="height: 400px;"></div> -->
                                 <canvas id="grafikBatang" width="400" height="200"></canvas>
                             </div>
                         </div>

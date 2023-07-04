@@ -121,16 +121,13 @@
                             <a class="waves-effect waves-dark" href="<?=base_url('view_penjualan')?>" aria-expanded="false">
                                 <i class="fas fa-history"></i><span class="hide-menu"> History Transaksi</span></a>
                         </li>
-                        
-                        <?php if ($this->session->userdata('akses') == 'admin') { ?>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i>
-                                <span class="hide-menu">Laporan</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="<?=base_url('laporan_barang')?>">Laporan Data Barang</a></li>
-                                    <li><a href="<?=base_url('laporan_penjualan')?>">Laporan Penjualan</a></li>
-                                </ul>
-                            </li>
-                        <?php } ?>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i>
+                            <span class="hide-menu">Laporan</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<?=base_url('laporan_barang')?>">Laporan Data Barang</a></li>
+                                <li><a href="<?=base_url('laporan_penjualan')?>">Laporan Penjualan</a></li>
+                            </ul>
+                        </li>
                         
                         <li style="margin-top: 100px;"> 
                             <a class="waves-effect waves-dark" href="<?=base_url('logout')?>" aria-expanded="false">

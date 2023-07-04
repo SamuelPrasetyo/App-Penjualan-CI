@@ -23,6 +23,7 @@ $route['laporan_barang'] = 'Data_Barang/laporan';
 // Entri Penjualan
 $route['view_penjualan'] = 'Penjualan/view_penjualan';
 $route['entri_penjualan'] = 'Penjualan/create';
+$route['entri_penjualan_2'] = 'Penjualan/create_2';
 $route['create_penjualan'] = 'Penjualan/action_create';
 $route['edit_penjualan/(:any)'] = 'Penjualan/update';
 $route['get_harga_barang'] = 'Penjualan/get_harga_barang';
