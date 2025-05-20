@@ -1,0 +1,1 @@
+Laporan dibuat untuk mendata barang per bulan dan mendata penjualan dengan rentang waktu tertentu sesuai kebutuhan.

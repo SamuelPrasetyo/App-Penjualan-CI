@@ -1,0 +1,9 @@
+Laporan Data Penjualan
+
+No.	ID Transaksi	Tanggal Beli	Nama Pembeli	Item Dibeli	Harga
+1	107230001	2023-07-01	Samuel	IPhone 14 Pro Max	Rp. 22200000
+2	207230002	2023-07-02	Grace	IPhone 11	Rp. 7770000
+3	307230003	2023-07-03	Nathan	MacBook Pro M2	Rp. 23865000
+4	307230004	2023-07-03	Bijan	IPhone 14 Pro Max	Rp. 22200000
+5	307230005	2023-07-03	Tita	IPhone 13 Pro Max	Rp. 21645000
+6	307230006	2023-07-03	Alvin	IPhone 12 Pro Max	Rp. 17760000

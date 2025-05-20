@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jul 2023 pada 13.03
+-- Waktu pembuatan: 04 Jul 2023 pada 14.24
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.0.28
 
@@ -89,9 +89,9 @@ INSERT INTO `penjualan` (`id_transaksi`, `tgl_beli`, `nama_pembeli`, `item_dibel
 (407230006, '2023-07-04', 'Tata', 'MacBook Pro M2', 23865000),
 (407230007, '2023-07-04', 'Jojo', 'IPhone 14 Pro Max', 22200000),
 (407230008, '2023-07-04', 'Jeowol', 'IPhone 14 Pro', 19980000),
-(407230009, '2023-07-04', 'Veren pacarnya nathan', 'MacBook Pro M2', 23865000),
-(407230010, '2023-07-04', 'Jovan pacarnya grace', 'MacBook Pro M2', 23865000),
-(407230011, '2023-07-04', 'Sharon my ice bear', 'IPhone 14', 15540000),
+(407230009, '2023-07-04', 'Veren', 'MacBook Pro M2', 23865000),
+(407230010, '2023-07-04', 'Jovan ', 'MacBook Pro M2', 23865000),
+(407230011, '2023-07-04', 'Sharon', 'IPhone 14', 15540000),
 (407230012, '2023-07-04', 'Pak Botak', 'IPhone 14 Pro', 19980000),
 (407230013, '2023-07-04', 'Orso', 'IPhone 13', 13875000),
 (407230014, '2023-07-04', 'Malkist', 'IPhone 14 Pro Max', 22200000);
